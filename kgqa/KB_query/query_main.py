@@ -15,8 +15,10 @@ def query_function(question):
             my_query = q2s.get_sparql(question.encode('utf-8'))
             #print(my_query)
             if my_query is not None:
-                result = fuseki.get_sparql_result(my_query)
-                value = fuseki.get_sparql_result_value(result)
+                # result = fuseki.get_sparql_result(my_query)
+                # value = fuseki.get_sparql_result_value(result)
+                value = ["knowbase 链接成功！"]
+                print(value)
 
                 # TODO 查询结果为空，根据OWA，回答“不知道”
                 if len(value) == 0:
