@@ -132,11 +132,9 @@ STATICFILES_DIRS  =(
 
 STATIC_URL = '/static/'
 from kgqa.KB_query import jena_sparql_endpoint
-from kgqa.KB_query import gstore_sparql_endpoint
 from kgqa.KB_query import question2sparql
 # TODO 连接Fuseki服务器。
-# fuseki = jena_sparql_endpoint.JenaFuseki()
-fuseki = gstore_sparql_endpoint.JenaFuseki()
+fuseki = jena_sparql_endpoint.JenaFuseki()
 # TODO 初始化自然语言到SPARQL查询的模块，参数是外部词典列表。
 q2s = question2sparql.Question2Sparql(['/home/bhb/project/KGQA-Based-On-medicine/kgqa/KB_query/dict/jibing_pos_name.txt',
                                        '/home/bhb/project/KGQA-Based-On-medicine/kgqa/KB_query/dict/drug_pos_name.txt',
