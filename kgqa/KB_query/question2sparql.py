@@ -4,14 +4,15 @@
 @desc: 将自然语言转为SPARQL查询语句
 """
 
-from kgqa.KB_query import question_drug_template
+# from kgqa.KB_query import question_drug_template
+from kgqa.KB_query import question_rule_template
 from kgqa.KB_query import word_tagging
 
 
 class Question2Sparql:
     def __init__(self, dict_paths):
         self.tw = word_tagging.Tagger(dict_paths)
-        self.rules = question_drug_template.rules
+        self.rules = question_rule_template.rules
 
     def get_sparql(self, question):
         """
